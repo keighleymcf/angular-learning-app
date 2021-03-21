@@ -1,5 +1,12 @@
-<button [disabled]="!allowNewServer">
+<button [disabled]="!allowNewServer" (click)="onCreateServer()">
     add server
 </button>
+<p>{{serverCreationStatus}}</p>
+
+<input type="text" (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>
+
+<label for="twoWay">two way</label>
+<input id="twoWay" type="text" [(ngModel)]="serverName">
 <app-server></app-server>
 <app-server></app-server>
